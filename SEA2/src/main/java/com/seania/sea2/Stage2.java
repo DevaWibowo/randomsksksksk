@@ -9,12 +9,19 @@ package com.seania.sea2;
  * @author kuma
  */
 public class Stage2 extends javax.swing.JFrame {
+    private String kata, kata2;
+    
 
+    
     /**
      * Creates new form Stage2
      */
     public Stage2() {
         initComponents();
+        lblLanjut0.setVisible(false);
+        panel2.setVisible(false);
+        panel3.setVisible(false);
+        btnLanjut.setVisible(false);
     }
 
     /**
@@ -26,21 +33,260 @@ public class Stage2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel1 = new javax.swing.JPanel();
+        lblBagus = new javax.swing.JLabel();
+        btnBangun = new javax.swing.JButton();
+        btnDiam = new javax.swing.JButton();
+        panel2 = new javax.swing.JPanel();
+        lblLanjut = new javax.swing.JLabel();
+        lblLanjut0 = new javax.swing.JLabel();
+        btnBerikut = new javax.swing.JButton();
+        btnLanjut = new javax.swing.JButton();
+        panel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("S2");
+
+        lblBagus.setText("Bagus, Ayo kita bergegas");
+
+        btnBangun.setText("Bangun");
+        btnBangun.setBorder(null);
+        btnBangun.setFocusable(false);
+        btnBangun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBangunActionPerformed(evt);
+            }
+        });
+
+        btnDiam.setText("Tetap diam");
+        btnDiam.setBorder(null);
+        btnDiam.setFocusable(false);
+        btnDiam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDiamActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
+        panel1.setLayout(panel1Layout);
+        panel1Layout.setHorizontalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(lblBagus)
+                .addContainerGap(136, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnDiam)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBangun)
+                .addContainerGap())
+        );
+        panel1Layout.setVerticalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(lblBagus)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBangun)
+                    .addComponent(btnDiam))
+                .addContainerGap())
+        );
+
+        panel2.setPreferredSize(new java.awt.Dimension(223, 100));
+
+        lblLanjut.setText("jLabel2");
+
+        lblLanjut0.setText("jLabel1");
+
+        btnBerikut.setText("Berikutnya");
+        btnBerikut.setBorder(null);
+        btnBerikut.setFocusable(false);
+        btnBerikut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBerikutActionPerformed(evt);
+            }
+        });
+
+        btnLanjut.setText("Lanjut");
+        btnLanjut.setBorder(null);
+        btnLanjut.setFocusable(false);
+        btnLanjut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLanjutActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
+        panel2.setLayout(panel2Layout);
+        panel2Layout.setHorizontalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnLanjut)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBerikut))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblLanjut0)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lblLanjut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        panel2Layout.setVerticalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(lblLanjut)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblLanjut0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBerikut)
+                    .addComponent(btnLanjut))
+                .addContainerGap())
+        );
+
+        jLabel1.setText("Dihadapanmu berdiri seekor makhluk yang mengerikan");
+
+        jButton1.setText("Hadapi");
+        jButton1.setBorder(null);
+        jButton1.setFocusable(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Pasrah");
+        jButton2.setBorder(null);
+        jButton2.setFocusable(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
+        panel3.setLayout(panel3Layout);
+        panel3Layout.setHorizontalGroup(
+            panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel3Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
+        );
+        panel3Layout.setVerticalGroup(
+            panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel3Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                    .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tahap1(){
+        lblBagus.setVisible(false);
+        btnDiam.setVisible(false);
+        btnBangun.setVisible(false);
+        panel2.setVisible(true);
+    }
+    
+    private void tahap1A(){
+        lblBagus.setVisible(false);
+        btnDiam.setVisible(false);
+        btnBangun.setVisible(false);
+        panel2.setVisible(true);
+        btnLanjut.setVisible(true);
+        btnBerikut.setVisible(false);
+    }
+    
+    private void tahap2(){
+        lblLanjut.setVisible(false);
+        lblLanjut0.setVisible(false);
+        btnBerikut.setVisible(false);
+        panel3.setVisible(true);
+    }
+    
+    private void btnDiamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiamActionPerformed
+        kata = "Ayolah, Kau tidak ingin membuat teman-teman mu menunggu, kan?";
+        lblLanjut.setText(kata);
+        tahap1A();
+    }//GEN-LAST:event_btnDiamActionPerformed
+
+    private void btnBangunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBangunActionPerformed
+        kata = "Kau bangun, menuju ke suatu tempat";
+        tahap1();
+        lblLanjut.setText(kata);
+    }//GEN-LAST:event_btnBangunActionPerformed
+
+    private void btnBerikutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBerikutActionPerformed
+        tahap2();        
+    }//GEN-LAST:event_btnBerikutActionPerformed
+
+    private void btnLanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanjutActionPerformed
+        kata2 = "Kau bangun, menuju ke suatu tempat";
+        lblLanjut0.setVisible(true);
+        lblLanjut0.setText(kata2);
+        btnLanjut.setVisible(false);
+        btnBerikut.setVisible(true);
+    }//GEN-LAST:event_btnLanjutActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Stage2Kembali s2k = new Stage2Kembali();
+        s2k.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Stage3 s = new Stage3();
+        s.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -53,7 +299,7 @@ public class Stage2 extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -78,5 +324,18 @@ public class Stage2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBangun;
+    private javax.swing.JButton btnBerikut;
+    private javax.swing.JButton btnDiam;
+    private javax.swing.JButton btnLanjut;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblBagus;
+    private javax.swing.JLabel lblLanjut;
+    private javax.swing.JLabel lblLanjut0;
+    private javax.swing.JPanel panel1;
+    private javax.swing.JPanel panel2;
+    private javax.swing.JPanel panel3;
     // End of variables declaration//GEN-END:variables
 }

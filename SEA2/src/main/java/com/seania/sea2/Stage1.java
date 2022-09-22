@@ -11,6 +11,7 @@ package com.seania.sea2;
 public class Stage1 extends javax.swing.JFrame {
     char ascii = (char)127;
     String val = ascii+"";
+    
     /**
      * Creates new form Stage1
      */
@@ -56,6 +57,7 @@ public class Stage1 extends javax.swing.JFrame {
         btnKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("S1");
 
         lblHai.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblHai.setText("Hai, ");
@@ -146,6 +148,11 @@ public class Stage1 extends javax.swing.JFrame {
         btnLanjut3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnLanjut3.setBorderPainted(false);
         btnLanjut3.setFocusable(false);
+        btnLanjut3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLanjut3ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("\"Aku harap\"");
@@ -233,6 +240,12 @@ public class Stage1 extends javax.swing.JFrame {
         s1k.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnKembaliActionPerformed
+
+    private void btnLanjut3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanjut3ActionPerformed
+        Stage2 s = new Stage2();
+        s.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnLanjut3ActionPerformed
 
     /**
      * @param args the command line arguments
