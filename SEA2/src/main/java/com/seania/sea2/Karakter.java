@@ -11,11 +11,27 @@ package com.seania.sea2;
 public class Karakter {
     private String Nama;
     private double Health, Attack, MaxHealth;
-    public Karakter(String nama, double health, double attack, double maxhealth){
+    private boolean Turn;
+    
+    public void setTurn(boolean turn){
+        this.Turn = turn;
+    }
+    
+    public boolean getTurn(){
+        return Turn;
+    }
+    
+    public void Lifesteal(Karakter karakter){
+        karakter.Health -= this.Attack;
+        this.tambahHealth(this.Attack);
+    }
+    
+    public Karakter(String nama, double health, double attack, double maxhealth, boolean turn){
         this.Nama = nama;
         this.Health = health;
         this.Attack = attack;
         this.MaxHealth = maxhealth;
+        this.Turn = turn;
     }
     
     public void Serang(Karakter karakter){
