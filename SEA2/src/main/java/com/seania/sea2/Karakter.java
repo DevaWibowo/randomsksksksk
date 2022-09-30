@@ -12,6 +12,15 @@ public class Karakter {
     private String Nama;
     private double Health, Attack, MaxHealth;
     private boolean Turn;
+    private int Counter;
+    
+    public int getCounter(){
+        return this.Counter;
+    }
+    
+    public void setCounter(int counter){
+        this.Counter = counter;
+    }
     
     public void setTurn(boolean turn){
         this.Turn = turn;
@@ -39,7 +48,7 @@ public class Karakter {
     }
     
     public void Heal(){
-        this.Health += this.Attack;
+        this.Health += this.Attack + 50;
     }
 
     /**

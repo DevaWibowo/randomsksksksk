@@ -6,7 +6,7 @@ package com.seania.sea2;
 
 import java.awt.Color;
 import java.text.DecimalFormat;
-import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,6 +17,7 @@ public class Stage3B extends javax.swing.JFrame {
     char ascii = (char)127;
     String val = ascii+"";
     int c = 0;
+    int cl = 0;
     
     DecimalFormat df = new DecimalFormat("####");
     
@@ -39,19 +40,79 @@ public class Stage3B extends javax.swing.JFrame {
         String hp = df.format(Cameleon.getMaxHealth());
         return hp;
     }
+    
+    private boolean cekVisibilityHeal(){
+        boolean cek = btnHeal.isVisible();
+        return cek;
+    }
+    
+    private void enDis(){
+        btnAttack.setEnabled(true);
+        btnHeal.setEnabled(true);
+        btnLifesteal.setEnabled(true);
+    }
+    
+    private void triDis(){
+        btnAttack.setEnabled(false);
+        btnHeal.setEnabled(false);
+        btnLifesteal.setEnabled(false);
+    }
+    
+    private void tampilHeal(){
+//        int hg = (int) Aku.getHealth();
+        String k = "Cahaya hijau lembut menyelimuti tubuhmu";
+        
+//        if(hg <= 20){
+            lblAn.setText(k);
+            lblAn.setVisible(true);
+            btnLanjut.setVisible(true);
+            triDis();
+            
+            Aku.tambahHealth(50);
+            btnHeal.setVisible(true);
+//        }
+    }
+    
+    private void tampilLifesteal(){
+        
+        String k = "Bisakah Aku menyerang sembari menyembuhkan tubuh ku?";
+        
+//        if(hmg <= 400){
+            lblAn.setText(k);
+            lblAn.setVisible(true);
+            btnLanjut.setVisible(true);
+            triDis();
+            
+            btnLifesteal.setVisible(true);
+            
+//        }
+    }
+    
+    private void lblbtn(){
+        lblAn.setVisible(false);
+        btnLanjut.setVisible(false);
+    }
 
     /**
      * Creates new form Stage3B
      */
     public Stage3B() {
         initComponents();
-        
         setExtendedState(Stage3B.MAXIMIZED_BOTH);
-        Aku = new Karakter("[][][]", 100, 10, 1000, true);
-        Cameleon = new Karakter("Cameleon", 100, 15, 200, false);
+        
+        lblbtn();
+        //Nama, HP, ATK, MaxHP, Turn
+        Aku = new Karakter("[][][]", 100, 10, 100, true);
+        Cameleon = new Karakter("Cameleon", 500, 15, 1000, false);
+        Aku.setCounter(0);
+        //
+        String c = Aku.getCounter()+"";
+        lblC.setText(c);
+        //
         lblNamaPlayer.setText(Aku.getNama());
         lblNamaMusuh.setText(Cameleon.getNama());
-        btnLifesteal.setEnabled(false);
+        btnLifesteal.setVisible(false);
+        btnHeal.setVisible(false);
         updateHealthBar();
         
     }
@@ -115,7 +176,11 @@ public class Stage3B extends javax.swing.JFrame {
         lblHealthMusuh = new javax.swing.JLabel();
         barMusuh = new javax.swing.JProgressBar();
         lblNamaMusuh = new javax.swing.JLabel();
-        Desktop = new javax.swing.JDesktopPane();
+        lblAn = new javax.swing.JLabel();
+        btnLanjut = new javax.swing.JButton();
+        lblC = new javax.swing.JLabel();
+        lblHeal = new javax.swing.JLabel();
+        lblLifesteal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Stage 3");
@@ -218,43 +283,65 @@ public class Stage3B extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Desktop.setBackground(new java.awt.Color(242, 242, 242));
+        lblAn.setText("jLabel1");
 
-        javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
-        Desktop.setLayout(DesktopLayout);
-        DesktopLayout.setHorizontalGroup(
-            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        DesktopLayout.setVerticalGroup(
-            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 124, Short.MAX_VALUE)
-        );
+        btnLanjut.setText("Lanjut >>");
+        btnLanjut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLanjutActionPerformed(evt);
+            }
+        });
+
+        lblC.setText("jLabel1");
+
+        lblHeal.setText("jLabel1");
+
+        lblLifesteal.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(Desktop)))
+                        .addGap(206, 206, 206)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnLanjut)
+                            .addComponent(lblAn))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblLifesteal)
+                .addGap(75, 75, 75)
+                .addComponent(lblHeal)
+                .addGap(35, 35, 35)
+                .addComponent(lblC)
+                .addGap(86, 86, 86))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblAn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Desktop)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLanjut)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblC)
+                            .addComponent(lblHeal))
+                        .addGap(40, 40, 40))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblLifesteal)
+                        .addGap(30, 30, 30)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -263,32 +350,83 @@ public class Stage3B extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAttackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAttackActionPerformed
-        Aku.Serang(Cameleon);
-        
-        c++;
-        if(c == 3){
-            c = 0;
-            btnLifesteal.setEnabled(true);
-        }
+    private void preventBar(){
         int h = (int) Cameleon.getHealth();
+        int hp = (int) Aku.getHealth();
+        
+        if(hp <= 0){
+            Aku.setHealth(0);
+            barPlayer.setValue(hp);
+            barPlayer.setString(getHealthAku() + " / " + getMaxHealthAku());
+        }
         
         if(Cameleon.getHealth() <= 0){
             Cameleon.setHealth(0);
             barMusuh.setValue(h);
             barMusuh.setString(getHealthAku() + " / " + getMaxHealthAku());
-            
-//            Stage4 s = new Stage4();
-//            s.setVisible(true);
-//            this.dispose();
+        }
+    }
+    
+    private void isDead(){
+        int hp = (int) Aku.getHealth();
+        if(hp <= 0){
+            JOptionPane.showMessageDialog(null, "Permainan Berakhir");
+            this.dispose();
+        }
+    }
+    
+    private void enableHeal(){
+        btnHeal.setEnabled(true);
+    }
+    
+    private void enableLifesteal(){
+        btnLifesteal.setEnabled(true);
+    }
+    
+    private void btnAttackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAttackActionPerformed
+        Aku.Serang(Cameleon);
+        Cameleon.Serang(Aku);
+        int hg = (int) Aku.getHealth();
+        int hmg = (int) Cameleon.getHealth();
+        int coun = Aku.getCounter();
+        boolean b = false;
+        
+        if(hg <= 20 && coun == 0){
+            tampilHeal();
+            Aku.setCounter(1);
+            String c = Aku.getCounter()+"";
+            lblC.setText(c);
         }
         
+        if(hmg <= 400 && coun == 1){
+            tampilLifesteal();
+            Aku.setCounter(2);
+            String c = Aku.getCounter()+"";
+            lblC.setText(c);
+        }
+        
+        c++;
+        if(c == 3){
+            enableHeal();
+            btnHeal.setEnabled(true);
+        }
+        
+        cl++;
+        if(cl == 3){
+            enableLifesteal();
+            btnLifesteal.setEnabled(true);
+        }
+        
+        preventBar();
         updateHealthBar();
         balikTurn();
+        isDead();
     }//GEN-LAST:event_btnAttackActionPerformed
 
     private void btnHealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHealActionPerformed
         Aku.Heal();
+        Cameleon.Serang(Aku);
+        
 
         int h = (int) Aku.getHealth();
         
@@ -300,17 +438,27 @@ public class Stage3B extends javax.swing.JFrame {
         
         updateHealthBar();
         balikTurn();
-        c++;
+        btnHeal.setEnabled(false);
+        c = 0;
+        isDead();
     }//GEN-LAST:event_btnHealActionPerformed
 
     private void btnLifestealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLifestealActionPerformed
 //        Aku.Lifesteal(Cameleon);
         Aku.Serang(Cameleon);
         Aku.Heal();
+        Cameleon.Serang(Aku);
+        
         updateHealthBar();
         btnLifesteal.setEnabled(false);
-        c++;
+        cl = 0;
+        isDead();
     }//GEN-LAST:event_btnLifestealActionPerformed
+
+    private void btnLanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanjutActionPerformed
+        enDis();
+        lblbtn();
+    }//GEN-LAST:event_btnLanjutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,16 +496,20 @@ public class Stage3B extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane Desktop;
     private javax.swing.JProgressBar barMusuh;
     private javax.swing.JProgressBar barPlayer;
     private javax.swing.JButton btnAttack;
     private javax.swing.JButton btnHeal;
+    private javax.swing.JButton btnLanjut;
     private javax.swing.JButton btnLifesteal;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblAn;
+    private javax.swing.JLabel lblC;
+    private javax.swing.JLabel lblHeal;
     private javax.swing.JLabel lblHealth;
     private javax.swing.JLabel lblHealthMusuh;
+    private javax.swing.JLabel lblLifesteal;
     private javax.swing.JLabel lblNamaMusuh;
     private javax.swing.JLabel lblNamaPlayer;
     // End of variables declaration//GEN-END:variables
