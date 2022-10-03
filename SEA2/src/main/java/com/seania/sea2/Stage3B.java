@@ -185,6 +185,7 @@ public class Stage3B extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Stage 3");
 
+        barPlayer.setBackground(Color.RED);
         barPlayer.setForeground(new java.awt.Color(0, 0, 0));
 
         btnAttack.setText("Serang");
@@ -375,6 +376,16 @@ public class Stage3B extends javax.swing.JFrame {
         }
     }
     
+    private void CIsDead(){
+        int hp = (int) Cameleon.getHealth();
+        if(hp <= 0){
+            JOptionPane.showMessageDialog(null, "Apakah ini sudah berakhir?");
+            this.dispose();
+            Stage3BA s3ba = new Stage3BA();
+            s3ba.setVisible(true);
+        }
+    }
+    
     private void enableHeal(){
         btnHeal.setEnabled(true);
     }
@@ -421,6 +432,7 @@ public class Stage3B extends javax.swing.JFrame {
         updateHealthBar();
         balikTurn();
         isDead();
+        CIsDead();
     }//GEN-LAST:event_btnAttackActionPerformed
 
     private void btnHealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHealActionPerformed
@@ -453,6 +465,7 @@ public class Stage3B extends javax.swing.JFrame {
         btnLifesteal.setEnabled(false);
         cl = 0;
         isDead();
+        CIsDead();
     }//GEN-LAST:event_btnLifestealActionPerformed
 
     private void btnLanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanjutActionPerformed

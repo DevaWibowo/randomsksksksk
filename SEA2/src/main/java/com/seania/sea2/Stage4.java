@@ -11,10 +11,13 @@ package com.seania.sea2;
 public class Stage4 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Stage4
+     * Creates new form Stage4D
      */
     public Stage4() {
         initComponents();
+        jPanel2.setVisible(false);
+        jPanel3.setVisible(false);
+//        setExtendedState(Stage4.MAXIMIZED_BOTH);
     }
 
     /**
@@ -26,21 +29,240 @@ public class Stage4 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lbl1 = new javax.swing.JLabel();
+        lbl2 = new javax.swing.JLabel();
+        lbl3 = new javax.swing.JLabel();
+        btnKeluar = new javax.swing.JButton();
+        btnHabisi = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        lblK = new javax.swing.JLabel();
+        btnLanjut = new javax.swing.JButton();
+        lblK1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        btnLanj = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Stage4D");
+
+        lbl1.setText("Makhluk di depan mu tumbang. Membeku tak bernapas...");
+
+        lbl2.setText("...Kau menatap tidak percaya...");
+
+        lbl3.setText("\"Habisi Dia?\"");
+
+        btnKeluar.setText("Keluar");
+        btnKeluar.setContentAreaFilled(false);
+        btnKeluar.setFocusable(false);
+        btnKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKeluarActionPerformed(evt);
+            }
+        });
+
+        btnHabisi.setText("Habisi");
+        btnHabisi.setContentAreaFilled(false);
+        btnHabisi.setFocusable(false);
+        btnHabisi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHabisiActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(lbl2))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnHabisi)
+                        .addGap(25, 25, 25)
+                        .addComponent(lbl3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnKeluar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(72, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnKeluar)
+                    .addComponent(btnHabisi))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(lbl1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        lblK.setText("jLabel4");
+
+        btnLanjut.setText("Lanjut >>");
+        btnLanjut.setContentAreaFilled(false);
+        btnLanjut.setFocusable(false);
+        btnLanjut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLanjutActionPerformed(evt);
+            }
+        });
+
+        lblK1.setText("jLabel4");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLanjut)
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblK1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblK)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblK)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblK1)
+                .addGap(4, 4, 4)
+                .addComponent(btnLanjut)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
+
+        btnLanj.setText("Lanjut >>");
+        btnLanj.setContentAreaFilled(false);
+        btnLanj.setFocusable(false);
+        btnLanj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLanjActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Kau menuju ke sebuah ruangan, dan berganti pakaian");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLanj)
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(btnLanj)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tahap1(){
+        lbl1.setVisible(false);
+        lbl2.setVisible(false);
+        lbl3.setVisible(false);
+        btnKeluar.setVisible(false);
+        btnHabisi.setVisible(false);
+
+        jPanel2.setVisible(true);
+    }
+    
+    private void btnHabisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHabisiActionPerformed
+        tahap1();
+        String k = "Tubuhmu bergerak tiba-tiba...";
+        String k0 = "...melancarkan sebuah serangan";
+        
+        lblK.setVisible(true);
+        lblK1.setVisible(true);
+        btnLanjut.setVisible(true);
+        lblK.setText(k);
+        lblK1.setText(k0);
+    }//GEN-LAST:event_btnHabisiActionPerformed
+
+    private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
+        tahap1();
+        
+        String k = "Kau keluar dari ruangan tersebut";
+        lblK1.setVisible(false);
+        lblK.setText(k);
+        lblK.setVisible(true);
+        btnLanjut.setVisible(true);
+    }//GEN-LAST:event_btnKeluarActionPerformed
+    
+    //Membuat panel 2 tidak terlihat
+    private void tahap2(){
+        lblK.setVisible(false);
+        lblK1.setVisible(false);
+        btnLanjut.setVisible(false);
+        
+        jPanel3.setVisible(true);
+        btnLanj.setVisible(true);
+        jLabel1.setVisible(true);
+    }
+    
+    private void btnLanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanjutActionPerformed
+        tahap2();
+    }//GEN-LAST:event_btnLanjutActionPerformed
+
+    private void btnLanjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLanjActionPerformed
+        End e = new End();
+        e.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnLanjActionPerformed
 
     /**
      * @param args the command line arguments
@@ -53,7 +275,7 @@ public class Stage4 extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -68,6 +290,7 @@ public class Stage4 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Stage4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -78,5 +301,18 @@ public class Stage4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHabisi;
+    private javax.swing.JButton btnKeluar;
+    private javax.swing.JButton btnLanj;
+    private javax.swing.JButton btnLanjut;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lbl1;
+    private javax.swing.JLabel lbl2;
+    private javax.swing.JLabel lbl3;
+    private javax.swing.JLabel lblK;
+    private javax.swing.JLabel lblK1;
     // End of variables declaration//GEN-END:variables
 }
