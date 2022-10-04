@@ -8,34 +8,19 @@ package Character0;
  *
  * @author kuma
  */
-public class Item {
-    int Stock;
-    
-    public int getStock(){
-        return this.Stock;
-    }
-    
-    public void tambahStock(int jumlah){
-        this.Stock += jumlah;
-    }
-    
-    public void kurangStock(int jumlah){
-        this.Stock -= jumlah;
-    }
-    
+public class Potion extends Item implements PotionIm{
+    @Override
     public double IsiPotionKecil(){
         return 20;
     }
     
+    @Override
     public double IsiPotionSedang(){
         return 50;
     }
     
+    @Override
     public double IsiPotionBesar(){
         return 100;
     }
-    
-//    public void UsePotion(Karakter karakter){
-//        karakter.TambahHealth(IsiPotionKecil());
-//    }
 }

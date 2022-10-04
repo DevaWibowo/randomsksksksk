@@ -8,11 +8,8 @@ package Character0;
  *
  * @author kuma
  */
-public interface Skill {
-    public void Serang(Karakter karakter);
-    public void Heal();
-    public void Defend(Karakter karakter);
-//    public void UseItem(Item item);
-    
-    
+public interface TalentIm {
+    public void Skill1(Karakter karakter);
+    //adaptasi skill wizard dari dice hunter
+    public void Skill2(Karakter karakter);
 }

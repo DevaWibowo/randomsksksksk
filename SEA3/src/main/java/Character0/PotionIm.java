@@ -8,11 +8,8 @@ package Character0;
  *
  * @author kuma
  */
-public interface Skill {
-    public void Serang(Karakter karakter);
-    public void Heal();
-    public void Defend(Karakter karakter);
-//    public void UseItem(Item item);
-    
-    
+public interface PotionIm {
+    public double IsiPotionKecil();
+    public double IsiPotionSedang();
+    public double IsiPotionBesar();
 }

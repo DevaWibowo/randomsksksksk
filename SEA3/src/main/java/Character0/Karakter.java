@@ -8,12 +8,15 @@ package Character0;
  *
  * @author kuma
  */
-public class Karakter implements Skill{
+public class Karakter extends Talent implements Skill{
     private double Health, Attack;
-    Item Potion = new Item();
     
     public double getHealth(){
         return this.Health;
+    }
+    
+    public void Sekil1(Karakter karakter){
+        karakter.Skill1(this);
     }
     
     public void TambahHealth(double health){
@@ -24,16 +27,19 @@ public class Karakter implements Skill{
         this.Health = health;
     }
     
-    public void UseItem_PotionKecil(){
-        this.Health += Potion.IsiPotionKecil();
+    public void UseItem_PotionKecil(Potion potion){
+        this.Health += potion.IsiPotionKecil();
+        potion.kurangStock(1);
     }
     
-    public void UseItem_PotionSedang(){
-        this.Health += Potion.IsiPotionSedang();
+    public void UseItem_PotionSedang(Potion potion){
+        this.Health += potion.IsiPotionSedang();
+        potion.kurangStock(1);
     }
     
-    public void UseItem_PotionBesar(){
-        this.Health += Potion.IsiPotionBesar();
+    public void UseItem_PotionBesar(Potion potion){
+        this.Health += potion.IsiPotionBesar();
+        potion.kurangStock(1);
     }
     
     @Override

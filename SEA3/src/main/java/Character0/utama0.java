@@ -10,11 +10,12 @@ package Character0;
  */
 public class utama0 {
     Karakter satu = new Karakter();
-    Item Potion = new Item();
+    Potion potion = new Potion();
     
     private void Setting(){
         satu.setAttack(10);
         satu.setHealth(20);
+        potion.tambahStock(5);
     }
     
     private void Display(){
@@ -22,15 +23,23 @@ public class utama0 {
         System.out.println(hp);
     }
     
+    private void DisplayStockItem(){
+        String stock = (int) potion.getStock()+"";
+        System.out.println(stock);
+    }
+    
     public utama0(){
         Setting();
-        Display();
-        satu.UseItem_PotionBesar();
+        DisplayStockItem();
+        
+//        Display();
+//        satu.UseItem_PotionKecil(potion);
 //        satu.Defend(satu);
 //        satu.Serang(satu);
 //        satu.Heal();
 //        satu.Serang(satu);
-        Display();
+        DisplayStockItem();
+//        Display();
     }
     
     public static void main(String[] args){
