@@ -20,7 +20,12 @@ public class utama0 {
     
     private void Display(){
         String hp = (int) satu.getHealth()+"";
-        System.out.println(hp);
+        String atk = (int) satu.getAttack()+"";
+        String def = (int) satu.getDefense()+"";
+        System.out.println("ATK: " + atk);
+        System.out.println("HP: " +hp);
+        System.out.println("DEF: " + def);
+        System.out.println("==================");
     }
     
     private void DisplayStockItem(){
@@ -30,16 +35,25 @@ public class utama0 {
     
     public utama0(){
         Setting();
-        DisplayStockItem();
-        
-//        Display();
+        Display();
+        satu.setTipe(Tipe.Attacker);
+        satu.getTipe();
+//        satu.Passive();
+//        System.out.println(satu.getTipe());
+//        if(satu.getTipe() == Tipe.Attacker){
+//            System.out.println("Ini adalah Attacker");
+//        }else{
+//            System.out.println("Ini bukanlah Attacker");
+//        }
+//        satu.Skill2(satu);
+//        DisplayStockItem();
 //        satu.UseItem_PotionKecil(potion);
 //        satu.Defend(satu);
 //        satu.Serang(satu);
 //        satu.Heal();
 //        satu.Serang(satu);
-        DisplayStockItem();
-//        Display();
+//        DisplayStockItem();
+        Display();
     }
     
     public static void main(String[] args){
