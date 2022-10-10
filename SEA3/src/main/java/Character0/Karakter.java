@@ -7,25 +7,34 @@ package Character0;
 import dump.Talent;
 
 enum Tipe {         
-        Defender, 
-        Attacker, 
-        Healer;
-        
-        
-//        Defender("Pelindung"), 
-//        Attacker("Penyerang"), 
-//        Healer("Penyembuh");
-        
-//        private String Deskripsi;
+    Defender("Pelindung"),
+    Attacker("Penyerang"),
+    Healer("Penyembuh");
+
+    private String Deskripsi;
 //
-//        Tipe(String deskripsi){
-//            this.Deskripsi = deskripsi;
-//        }
+    Tipe(String deskripsi){
+        this.Deskripsi = deskripsi;
+    }
 //        
-//        public String getDeskripsi(){
-//            return Deskripsi;
-//        }
-    } 
+    public String getDeskripsi(){
+        return this.Deskripsi;
+    }
+} 
+
+enum Rarity{
+    C("Common"),
+    R("Rare"),
+    SR("Super Rare"),
+    UR("Ultra Rare"),
+    SSR("Super Super Rarec");
+    
+    private String Deskripsi;
+    
+    Rarity(String deskripsi){
+        this.Deskripsi = deskripsi;
+    }
+}
 
 /**
  *
@@ -33,38 +42,16 @@ enum Tipe {
  */
 public class Karakter extends Talent implements Skill{
     Tipe tipe;
+    Rarity rarity;
     private double Health, Attack, Defense;
     
     public Tipe getTipe(){
         return this.tipe;
     }
     
-//    public Tipe getTipe(){
-//        Tipe k = this.getTipe();
-//        if(k == Tipe.Healer){
-//            return Tipe.Healer;
-//        }else if(k == Tipe.Defender){
-//            return Tipe.Defender;
-//        }else if(k == Tipe.Attacker){
-//            return Tipe.Attacker;
-//        }
-//        
-//        return k;
-//    }
-    
-    public Tipe getTipeDefender(){
-        return Tipe.Defender;
+    public Rarity getRarity(){
+        return this.rarity;
     }
-    
-    public Tipe getTipeAttacker(){
-        return Tipe.Attacker;
-    }
-    
-    public Tipe getTipeHealer(){
-        return Tipe.Healer;
-    }
-    
-    
     
     public void setTipe(Tipe tipe){
         this.tipe = tipe;
@@ -144,7 +131,7 @@ public class Karakter extends Talent implements Skill{
     
     @Override
     public void Serang(Karakter karakter){
-        karakter.Health -= this.Attack;
+        karakter.Health -= this.Attack * 0.2;
     }
     
     @Override
@@ -154,5 +141,9 @@ public class Karakter extends Talent implements Skill{
     
     public void setAttack(double attack){
         this.Attack = attack;
+    }
+    
+    public void setDefense(double defense){
+        this.Defense = defense;
     }
 }

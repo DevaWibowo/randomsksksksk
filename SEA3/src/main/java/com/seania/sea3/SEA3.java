@@ -15,3 +15,14 @@ public class SEA3 {
         System.out.println("Hello World!");
     }
 }
+
+//public class Karakter{
+//    String Nama;
+//    Karakter(String nama){
+//        this.Nama = nama;
+//    }
+//    
+//    public void setNama(){
+//        this.Nama = nama;
+//    }
+//}

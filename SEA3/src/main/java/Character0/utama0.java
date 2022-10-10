@@ -16,6 +16,7 @@ public class utama0 {
         satu.setAttack(10);
         satu.setHealth(20);
         potion.tambahStock(5);
+        satu.setTipe(Tipe.Attacker);
     }
     
     private void Display(){
@@ -34,10 +35,14 @@ public class utama0 {
     }
     
     public utama0(){
-        Setting();
-        Display();
-        satu.setTipe(Tipe.Attacker);
-        satu.getTipe();
+//        Setting();
+//        for(Tipe t : Tipe.values()){
+//            System.out.println(t.getDeskripsi());
+//        }
+//        Display();
+        Tipe s = Tipe.Attacker;
+        satu.setTipe(Tipe.Healer);
+        System.out.println(satu.getTipe());
 //        satu.Passive();
 //        System.out.println(satu.getTipe());
 //        if(satu.getTipe() == Tipe.Attacker){
@@ -53,7 +58,7 @@ public class utama0 {
 //        satu.Heal();
 //        satu.Serang(satu);
 //        DisplayStockItem();
-        Display();
+//        Display();
     }
     
     public static void main(String[] args){
