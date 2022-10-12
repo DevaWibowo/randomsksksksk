@@ -41,7 +41,7 @@ enum Rarity{
  * @author kuma
  */
 public class Karakter extends Talent implements Skill{
-    Tipe tipe;
+    Tipe tipe, k;
     Rarity rarity;
     private double Health, Attack, Defense;
     
@@ -75,7 +75,7 @@ public class Karakter extends Talent implements Skill{
     
     @Override
     public void Passive(){
-        Tipe k = this.getTipe();
+        k = this.getTipe();
         switch(k){
             case Healer -> this.Health *= 1.5;
             case Attacker -> this.Attack *= 1.5;
@@ -136,7 +136,14 @@ public class Karakter extends Talent implements Skill{
     
     @Override
     public void Heal(){
-        this.Health += this.Attack * 0.5;
+        k = this.getTipe();
+        switch(k){
+            case Healer -> this.Health += this.Attack * 0.5;
+        }
+        
+        if(k == Tipe.Healer){
+            this.Health += this.Attack * 0.5;
+        }
     }
     
     public void setAttack(double attack){
